@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView fullNameTextView, emailTextView, studentTextView;
     private DatabaseReference databaseReference;
     private User user;
-    String userId;
-    Button leaveButton;
+    private String userId;
+    private Button leaveButton, addGroupButton;
 
     private boolean doubleBackToExitPressedOnce = false;
 
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 user = snapshot.child(userId).getValue(User.class);
                 fullNameTextView.setText(user.fullName);
                 emailTextView.setText(user.email);
+                studentTextView.setText(user.userType);
             }
 
             @Override
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         leaveButton.setOnClickListener(this);
         emailTextView.setOnClickListener(this);
+        addGroupButton.setOnClickListener(this);
 
     }
 
@@ -76,15 +78,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 clipboard.setPrimaryClip(clip);
                 Toast.makeText(this, "Скопійовано", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.btn_add_group:
+                startActivity(new Intent(this, CreateGroupActivity.class));
+                break;
         }
     }
 
     private void init() {
+        studentTextView = findViewById(R.id.tv_student);
         leaveButton = findViewById(R.id.btn_leave);
         userId = Paper.book().read("UserId");
         emailTextView = findViewById(R.id.email_edit_text);
         fullNameTextView = findViewById(R.id.tv_name);
-
+        addGroupButton = findViewById(R.id.btn_add_group);
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
     }
