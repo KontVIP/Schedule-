@@ -90,9 +90,9 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-    <Button
+        <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_weight="100dp"
@@ -101,15 +101,20 @@
         android:id="@+id/btn_sсhedule"
         android:text="@string/btn_schedule"
         />
-    <Button
+        <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="100dp"
         android:id="@+id/btn_mark"
         android:text="@string/btn_mark" />
-    <Button
+        <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 
 </LinearLayout>
