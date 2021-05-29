@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
-                android:text="Авторизація"
+                android:text="@string/auth"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -34,7 +34,7 @@
             android:fontFamily="sans-serif-condensed"
             android:paddingTop="150dp"
             android:paddingBottom="16dp"
-            android:text="Stylish Clothes"
+            android:text="@string/schedule"
             android:textSize="32sp" />
 
         <LinearLayout
@@ -51,7 +51,7 @@
                 android:layout_height="30dp"
                 android:layout_weight=".85"
                 android:background="@drawable/custom_edit_text"
-                android:hint="Email Address"
+                android:hint="@string/email"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
 
@@ -71,7 +71,7 @@
                 android:layout_height="30dp"
                 android:layout_weight=".85"
                 android:background="@drawable/custom_edit_text"
-                android:hint="Пароль"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
@@ -82,7 +82,7 @@
             android:id="@+id/sign_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ВХІД"
+            android:text="@string/enter"
             android:background="@drawable/button_style"
             android:textColor="@color/black" />
 
@@ -98,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
-                android:text="Забули пароль?"
+                android:text="@string/forgot_password"
                 android:textSize="16sp" />
 
             <TextView
@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:paddingLeft="75dp"
-                android:text="Реєстрація"
+                android:text="@string/registration"
                 android:textSize="16sp" />
 
         </LinearLayout>
