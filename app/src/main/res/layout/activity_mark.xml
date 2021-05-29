@@ -25,7 +25,8 @@
             android:paddingStart="16dp"
             android:text="@string/text_mark"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="RtlSymmetry" />
 
     </LinearLayout>
 
