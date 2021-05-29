@@ -32,6 +32,7 @@
     <string name="btn_OK">OK</string>
     <string name="tv_introduction_create_group">Створення групи</string>
     <string name="text_code_group">Введіть код групи</string>
+    <string name="btn_apply_name_group">Приняти назву</string>
 
     <string-array name="users">
         <item>Студент</item>
