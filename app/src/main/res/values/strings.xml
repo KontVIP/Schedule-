@@ -18,4 +18,9 @@
     <string name="btn_mark">Відмітитись</string>
     <string name="btn_journal">Журнал</string>
     <string name="btn_option">Налаштування</string>
+
+    <string-array name="users">
+        <item>Студент</item>
+        <item>Староста</item>
+    </string-array>
 </resources>
