@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
                 android:text="@string/auth"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
 
         </LinearLayout>
