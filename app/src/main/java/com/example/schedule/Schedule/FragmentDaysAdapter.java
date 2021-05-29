@@ -46,6 +46,6 @@ public class FragmentDaysAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 13;
+        return 14;
     }
 }
