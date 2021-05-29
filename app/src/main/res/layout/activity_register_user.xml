@@ -57,7 +57,7 @@
                 android:layout_height="30dp"
                 android:layout_weight=".85"
                 android:background="@drawable/custom_edit_text"
-                android:hint="Повне ім'я"
+                android:hint="@string/et_name"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
 

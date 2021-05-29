@@ -23,6 +23,7 @@
     <string name="btn_add_group">Створити групу</string>
     <string name="btn_edit_group">Редагувати групу</string>
     <string name="btn_delete_group">Видалити групу</string>
+    <string name="et_name">Ім\'я прізвище</string>
 
     <string-array name="users">
         <item>Студент</item>
