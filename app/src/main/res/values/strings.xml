@@ -25,6 +25,12 @@
     <string name="btn_delete_group">Видалити групу</string>
     <string name="et_name">Ім\'я прізвище</string>
     <string name="btn_find_group">Доєднатися</string>
+    <string name="tv_text_create">Введіть назву групи</string>
+    <string name="et_hint_name">Назва групи</string>
+    <string name="tv_code">Відправте цей код своїм одногрупникам, для того щоб вони змогли приєднатися</string>
+    <string name="tv_secret_code">1234567890</string>
+    <string name="btn_OK">OK</string>
+    <string name="tv_introduction_create_group">Створення групи</string>
 
     <string-array name="users">
         <item>Студент</item>
