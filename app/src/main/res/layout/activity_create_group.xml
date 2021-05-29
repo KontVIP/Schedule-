@@ -76,8 +76,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/tv_create_code_group"
             android:text="@string/tv_secret_code"
-            app:drawableRightCompat="@drawable/content_copy" />
+            app:drawableRightCompat="@drawable/content_copy"
+            tools:ignore="InvalidId" />
 
         <Button
             android:layout_width="wrap_content"
