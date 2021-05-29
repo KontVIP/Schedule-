@@ -23,6 +23,15 @@
             android:fontFamily="sans-serif-condensed"
             android:text="@string/text_monday"
             android:textSize="32sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="25dp"
+            android:id="@+id/first_week"
+            android:text="@string/text_first_week"/>
     </LinearLayout>
 <LinearLayout
     android:layout_width="match_parent"
@@ -165,6 +174,12 @@
         >
 
     </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/border">
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -172,7 +187,23 @@
         android:padding="10dp"
         android:id="@+id/tv_sixth_number"
         android:text="@string/number_sixth" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_monday_first_lesson_sixth"
+        android:layout_marginStart="80dp"
+        android:textSize="16sp"
+        android:text="@string/lessonId"
+        android:padding="10dp"
+        />
 
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/border"
+    >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -183,9 +214,36 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/tv_monday_first_lesson_seventh"
+        android:layout_marginStart="80dp"
+        android:textSize="16sp"
+        android:text="@string/lessonId"
+        android:padding="10dp"
+        />
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="10dp"
         android:id="@+id/tv_eight_number"
         android:text="@string/number_eight"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_monday_first_lesson_eight"
+            android:layout_marginStart="80dp"
+            android:textSize="16sp"
+            android:text="@string/lessonId"
+            android:padding="10dp"
+            />
+    </LinearLayout>
 </LinearLayout>
 </LinearLayout>
