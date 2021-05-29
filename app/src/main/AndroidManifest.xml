@@ -11,6 +11,13 @@
         android:theme="@style/Theme.Schedule">
         <activity android:name=".MainActivity">
         </activity>
+
+        <activity android:name=".Auth.ForgotPasswordActivity">
+        </activity>
+
+        <activity android:name=".Auth.RegisterUserActivity">
+        </activity>
+
         <activity android:name=".Auth.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
