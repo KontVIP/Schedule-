@@ -2,7 +2,7 @@ package com.example.schedule.Auth;
 
 public class User {
 
-    public String fullName, date, email, userType;
+    public String fullName, date, email, userType, groupId = "";
 
     public User() {
 
