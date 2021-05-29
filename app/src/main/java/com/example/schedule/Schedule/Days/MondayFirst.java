@@ -1,4 +1,4 @@
-package com.example.schedule.Schedule;
+package com.example.schedule.Schedule.Days;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,10 +11,10 @@ import com.example.schedule.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SaturdayFirst#newInstance} factory method to
+ * Use the {@link MondayFirst#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SaturdayFirst extends Fragment {
+public class MondayFirst extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +25,7 @@ public class SaturdayFirst extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SaturdayFirst() {
+    public MondayFirst() {
         // Required empty public constructor
     }
 
@@ -35,11 +35,11 @@ public class SaturdayFirst extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SaturdayFirst.
+     * @return A new instance of fragment MondayFirst.
      */
     // TODO: Rename and change types and number of parameters
-    public static SaturdayFirst newInstance(String param1, String param2) {
-        SaturdayFirst fragment = new SaturdayFirst();
+    public static MondayFirst newInstance(String param1, String param2) {
+        MondayFirst fragment = new MondayFirst();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,6 +60,6 @@ public class SaturdayFirst extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_saturday_first, container, false);
+        return inflater.inflate(R.layout.fragment_monday_first, container, false);
     }
 }

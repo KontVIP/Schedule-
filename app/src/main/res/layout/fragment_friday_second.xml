@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Schedule.FridaySecond"
+    tools:context=".Schedule.Days.FridaySecond"
     tools:ignore="ExtraText">
 
     <LinearLayout

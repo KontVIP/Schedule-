@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 fullNameTextView.setText(user.fullName);
                 emailTextView.setText(user.email);
                 studentTextView.setText(user.userType);
-                if (user.groupId != "") {
+                if (!user.groupId.equals("")) {
                     groupReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
