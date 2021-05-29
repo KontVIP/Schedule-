@@ -1,5 +1,9 @@
 package com.example.schedule;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,9 +37,9 @@ public class CreateGroupActivity extends AppCompatActivity {
     private String groupId;
     private User user;
     private EditText groupNameEditText;
-    private Button createGroupButton;
-    private TextView groupNameTextView,
-    Group group;
+    private Button createGroupButton, okButton;
+    private TextView groupNameTextView, groupCodeTextView, codeInfoTextView;
+    private Group group;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,11 @@ public class CreateGroupActivity extends AppCompatActivity {
         createGroupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (groupNameEditText.getText().toString().trim().isEmpty()) {
+                    groupNameEditText.setError("Введіть назву групи!");
+                    groupNameEditText.requestFocus();
+                    return;
+                }
 
                 userReference.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -59,6 +68,21 @@ public class CreateGroupActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(CreateGroupActivity.this, "Групу створено", Toast.LENGTH_SHORT).show();
+                                    ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                                    ClipData clip = ClipData.newPlainText("GroupCode", groupId);
+                                    clipboard.setPrimaryClip(clip);
+
+                                    groupCodeTextView.setText(groupId);
+
+                                    groupNameTextView.setVisibility(View.GONE);
+                                    groupNameEditText.setVisibility(View.GONE);
+                                    createGroupButton.setVisibility(View.GONE);
+                                    okButton.setVisibility(View.VISIBLE);
+                                    groupCodeTextView.setVisibility(View.VISIBLE);
+                                    codeInfoTextView.setVisibility(View.VISIBLE);
+
+                                    user.groupId = groupId;
+                                    userReference.child(Paper.book().read("UserId")).setValue(user);
 
                                 } else {
                                     Toast.makeText(CreateGroupActivity.this, "Помилка!", Toast.LENGTH_SHORT).show();
@@ -76,9 +100,30 @@ public class CreateGroupActivity extends AppCompatActivity {
             }
         });
 
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CreateGroupActivity.this, MainActivity.class));
+            }
+        });
+
+        groupCodeTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("GroupCode", groupId);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(CreateGroupActivity.this, "Скопійовано", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     private void init() {
+        codeInfoTextView = findViewById(R.id.code_info_text_view);
+        groupNameTextView = findViewById(R.id.tv_text_create);
+        groupCodeTextView = findViewById(R.id.tv_create_code_group);
+        okButton = findViewById(R.id.ok_button);
         createGroupButton = findViewById(R.id.btn_apply_group);
         groupNameEditText = findViewById(R.id.et_create_group);
         userReference = FirebaseDatabase.getInstance().getReference("Users");
@@ -88,10 +133,14 @@ public class CreateGroupActivity extends AppCompatActivity {
     }
 
     private void createGroup(String groupName, String student) {
-        if(!groupName.isEmpty()) {
+
             List<String> students = new ArrayList<>();
             students.add(student);
             group = new Group(groupName, students);
-        }
     }
+
+    @Override
+    public void onBackPressed() {
+    }
+
 }
