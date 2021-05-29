@@ -30,7 +30,8 @@
             android:paddingStart="16dp"
             android:text="@string/tv_text_find_group"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="RtlSymmetry" />
 
     </LinearLayout>
 
