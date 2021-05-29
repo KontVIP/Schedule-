@@ -62,9 +62,13 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/code_info_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="16sp"
         android:padding="10dp"
+        android:textColor="@color/black"
+        android:visibility="gone"
         android:text="@string/tv_code" />
 
     <LinearLayout
@@ -78,13 +82,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_create_code_group"
             android:text="@string/tv_secret_code"
+            android:visibility="gone"
             app:drawableRightCompat="@drawable/content_copy"
             tools:ignore="InvalidId" />
 
         <Button
+            android:id="@+id/ok_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
             android:text="@string/btn_OK" />
     </LinearLayout>
 
