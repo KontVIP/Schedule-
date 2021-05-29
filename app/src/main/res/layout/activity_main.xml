@@ -93,20 +93,21 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_weight="100dp"
         android:layout_marginStart="250dp"
         android:layout_marginTop="30dp"
         android:id="@+id/btn_sсhedule"
         android:text="@string/btn_schedule"
         />
+
         <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="100dp"
-        android:id="@+id/btn_mark"
-        android:text="@string/btn_mark" />
+            android:id="@+id/btn_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/btn_mark" />
+
         <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
