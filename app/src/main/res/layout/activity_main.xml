@@ -71,7 +71,7 @@
                 android:text="@string/email"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                app:drawableLeftCompat="@drawable/content_copy" />
+                app:drawableRightCompat="@drawable/content_copy" />
 
         </LinearLayout>
 
