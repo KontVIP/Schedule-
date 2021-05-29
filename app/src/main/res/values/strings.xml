@@ -41,4 +41,18 @@
         <item>Студент</item>
         <item>Староста</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_monday">Понеділок</string>
+    <string name="text_friday">П\'ятниця</string>
+    <string name="text_saturday">Субота</string>
+    <string name="text_sunday">Неділя</string>
+    <string name="text_thursday">Четвер</string>
+    <string name="text_tuesday">Вівторок</string>
+    <string name="text_wednesday">Середа</string>
+    <string name="number_first">1.</string>
+    <string name="number_second">2.</string>
+    <string name="number_third">3.</string>
+    <string name="number_fourth">4.</string>
+    <string name="number_fifth">5.</string>
 </resources>

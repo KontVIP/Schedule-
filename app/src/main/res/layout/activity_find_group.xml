@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/et_find_group"
         android:hint="@string/hint_code_group"
-        android:inputType="text|number"/>
+        />
 
 
     <Button
