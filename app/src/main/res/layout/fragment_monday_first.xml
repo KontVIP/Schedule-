@@ -30,6 +30,12 @@
     android:orientation="vertical"
     android:background="@drawable/border"
     >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/border">
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,7 +45,25 @@
         android:id="@+id/tv_first_number"
         android:text="@string/number_first"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/tv_monday_first_lesson_first"
+        android:layout_marginStart="80dp"
+        android:textSize="16sp"
+        android:text="@string/lessonId"
+        android:padding="10dp"
+        />
 
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/border"
+        >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,12 +71,49 @@
         android:padding="10dp"
         android:text="@string/number_second"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_monday_first_lesson_second"
+            android:layout_marginStart="80dp"
+            android:textSize="16sp"
+            android:text="@string/lessonId"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/border">
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_third_number"
         android:padding="10dp"
         android:text="@string/number_third"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_monday_first_lesson_third"
+            android:layout_marginStart="80dp"
+            android:textSize="16sp"
+            android:text="@string/lessonId"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/border">
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,12 +122,49 @@
         android:id="@+id/tv_fourth_number"
         android:text="@string/number_fourth"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_monday_first_lesson_fourth"
+            android:layout_marginStart="80dp"
+            android:textSize="16sp"
+            android:text="@string/lessonId"
+            android:padding="10dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/border">
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:id="@+id/tv_fifth_number"
         android:text="@string/number_fifth"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_monday_first_lesson_fifth"
+            android:layout_marginStart="80dp"
+            android:textSize="16sp"
+            android:text="@string/lessonId"
+            android:padding="10dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/border"
+        >
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -88,5 +186,6 @@
         android:padding="10dp"
         android:id="@+id/tv_eight_number"
         android:text="@string/number_eight"/>
+
 </LinearLayout>
 </LinearLayout>

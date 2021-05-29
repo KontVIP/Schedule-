@@ -23,11 +23,11 @@
     <string name="btn_add_group">Створити групу</string>
     <string name="btn_edit_group">Редагувати</string>
     <string name="btn_delete_group">Видалити групу</string>
-    <string name="et_name">Ім\'я прізвище</string>
+    <string name="et_name">Ім\'я та прізвище</string>
     <string name="btn_find_group">Доєднатися</string>
     <string name="tv_text_create">Введіть назву групи</string>
     <string name="et_hint_name">Назва групи</string>
-    <string name="tv_code">Відправте цей код своїм одногрупникам, для того щоб вони змогли приєднатися</string>
+    <string name="tv_code">Відправте цей код своїм одногрупникам, для того щоб вони змогли приєднатися. Його можна буде знайти в налаштуваннях.</string>
     <string name="tv_secret_code">1234567890</string>
     <string name="btn_OK">OK</string>
     <string name="tv_introduction_create_group">Створення групи</string>
@@ -58,4 +58,5 @@
     <string name="number_sixth">6.</string>
     <string name="number_seventh">7.</string>
     <string name="number_eight">8.</string>
+    <string name="lessonId">lessonId</string>
 </resources>

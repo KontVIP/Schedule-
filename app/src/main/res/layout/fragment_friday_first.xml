@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Schedule.FridayFirst">
+    tools:context=".Schedule.FridayFirst"
+    tools:ignore="ExtraText"
+    android:orientation="vertical"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,6 +24,12 @@
             android:text="@string/text_friday"
             android:textSize="32sp" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/border"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,3 +89,4 @@
             android:id="@+id/tv_eight_number"
             android:text="@string/number_eight"/>
     </LinearLayout>
+</LinearLayout>
