@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".JournalActivity"
-    >
+    tools:context=".JournalActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -28,47 +28,47 @@
             tools:ignore="RtlSymmetry" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:orientation="vertical"
         android:gravity="center"
-        >
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/tv_name"
-    android:text="@string/first_nameid"
-    android:textSize="20sp"
-    />
+        android:orientation="vertical">
+
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/first_nameid"
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/tv_name_second"
-            android:text="@string/first_nameid"
-            android:textSize="20sp"
-            />
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/first_nameid"
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/tv_name_third"
-            android:text="@string/first_nameid"
-            android:textSize="20sp"
-            />
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/first_nameid"
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/tv_name_fourth"
-            android:text="@string/first_nameid"
-            android:textSize="20sp"
-            />
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_name_fifth"
             android:text="@string/first_nameid"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_name_fifth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/first_nameid"
+            android:textSize="20sp" />
     </LinearLayout>
 </LinearLayout>
