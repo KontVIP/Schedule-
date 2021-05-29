@@ -16,4 +16,6 @@
     <string name="groupid">groupId</string>
     <string name="btn_schedule">Розклад</string>
     <string name="btn_mark">Відмітитись</string>
+    <string name="btn_journal">Журнал</string>
+    <string name="btn_option">Налаштування</string>
 </resources>

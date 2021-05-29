@@ -8,15 +8,18 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="80dp"
         android:orientation="horizontal"
+        android:background="@drawable/border"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_fisrtname"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
             android:fontFamily="sans-serif-condensed"
             android:paddingBottom="16dp"
@@ -49,6 +52,7 @@
             android:padding="10dp"
             android:gravity="center"
             android:text="@string/email"
+            android:background="@drawable/border"
             android:layout_marginStart="160dp"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -65,6 +69,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:id="@+id/student"
             android:text="@string/tv_student"
             android:layout_marginStart="30dp"
@@ -74,6 +79,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:id="@+id/tv_groupId"
             android:text="@string/groupid"
             android:layout_marginStart="180dp"
@@ -85,28 +91,57 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_weight="100dp"
-        android:layout_marginStart="250dp"
+        android:layout_marginStart="200dp"
         android:layout_marginTop="30dp"
+        android:background="@drawable/button_gradient"
         android:id="@+id/btn_sсhedule"
         android:text="@string/btn_schedule"
         />
-    <Button
-        android:layout_width="wrap_content"
+
+
+        <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="100dp"
+        android:layout_weight="100dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="20dp"
+            android:background="@drawable/button_gradient"
         android:id="@+id/btn_mark"
         android:text="@string/btn_mark" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_weight="100dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="20dp"
+            android:background="@drawable/button_gradient"
+        android:id="@+id/btn_journal"
+        android:text="@string/btn_journal"
+        />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_weight="100dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_gradient"
+            android:id="@+id/btn_option"
+            android:text="@string/btn_option"
+            />
+
+
     </LinearLayout>
 
 </LinearLayout>
