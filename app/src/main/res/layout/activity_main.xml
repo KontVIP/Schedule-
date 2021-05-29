@@ -120,6 +120,12 @@
             android:layout_marginTop="20dp"
             android:text="@string/btn_add_group"/>
 
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_find_group"
+                android:text="@string/btn_find_group"/>
+
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
