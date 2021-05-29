@@ -35,6 +35,7 @@
             android:paddingTop="150dp"
             android:paddingBottom="16dp"
             android:text="@string/schedule"
+            android:textColor="@color/black"
             android:textSize="32sp" />
 
         <LinearLayout

@@ -29,7 +29,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
     private TextView bannerTextView;
     private Button registerButton;
     private ProgressBar progressBar;
-    private EditText fullNameEditText, ageEditText, emailEditText, passwordEditText;
+    private EditText fullNameEditText, dateEditText, emailEditText, passwordEditText;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
         bannerTextView.setOnClickListener(this);
 
         fullNameEditText = (EditText) findViewById(R.id.full_name_edit_text);
-        ageEditText = (EditText) findViewById(R.id.age_edit_text);
+        dateEditText = (EditText) findViewById(R.id.date_edit_text);
         emailEditText = (EditText) findViewById(R.id.email_edit_text);
         passwordEditText = (EditText) findViewById(R.id.password_edit_text);
 
@@ -66,7 +66,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
 
     private void registerUser() {
         String fullName = fullNameEditText.getText().toString().trim();
-        String age = ageEditText.getText().toString().trim();
+        String date = dateEditText.getText().toString().trim();
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
@@ -76,9 +76,9 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
             return;
         }
 
-        if(age.isEmpty()) {
-            ageEditText.setError("Необхідний вік!");
-            ageEditText.requestFocus();
+        if(date.isEmpty()) {
+            dateEditText.setError("Необхідний вік!");
+            dateEditText.requestFocus();
             return;
         }
 
@@ -112,7 +112,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()) {
-                    User user = new User(fullName, age, email);
+                    User user = new User(fullName, date, email);
 
                     FirebaseDatabase.getInstance().getReference("Users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
