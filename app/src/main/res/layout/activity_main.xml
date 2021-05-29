@@ -69,6 +69,7 @@
                 android:padding="10dp"
                 android:text="@string/email"
                 android:textColor="@color/black"
+                android:drawableLeft="@drawable/content_copy"
                 android:textSize="18sp" />
 
         </LinearLayout>
