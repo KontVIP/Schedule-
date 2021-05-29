@@ -62,4 +62,5 @@
     <string name="text_first_week">Тиждень 1</string>
     <string name="text_second_week">Тиждень 2</string>
     <string name="tv_student_name">Ім\'я студента</string>
+    <string name="text_mark">Відмітитись</string>
 </resources>
