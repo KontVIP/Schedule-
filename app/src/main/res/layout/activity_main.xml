@@ -107,6 +107,26 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_add_group"
+            android:layout_marginTop="20dp"
+            android:text="@string/btn_add_group"/>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_edit_group"
+            android:text="@string/btn_edit_group"/>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_delete_group"
+            android:text="@string/btn_delete_group"
+            />
+
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_sсhedule"
             android:layout_width="150dp"
@@ -143,7 +163,7 @@
             android:id="@+id/btn_leave"
             android:layout_width="150dp"
             android:layout_height="40dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/button_gradient"
             android:text="@string/btn_leave" />
 

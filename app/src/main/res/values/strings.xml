@@ -20,6 +20,9 @@
     <string name="btn_option">Налаштування</string>
     <string name="btn_leave">Вийти з акаунту</string>
     <string name="main_menu">Головне меню</string>
+    <string name="btn_add_group">Створити групу</string>
+    <string name="btn_edit_group">Редагувати групу</string>
+    <string name="btn_delete_group">Видалити групу</string>
 
     <string-array name="users">
         <item>Студент</item>
