@@ -70,13 +70,33 @@
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_weight=".85"
-                android:inputType="date"
                 android:background="@drawable/custom_edit_text"
                 android:hint="@string/et_year_happy_birthday"
+                android:inputType="date"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="1">
+
+            <Spinner
+                android:id="@+id/user_spinner"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_weight=".85"
+                android:background="@drawable/custom_edit_text"
+                android:entries="@array/users" />
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -122,10 +142,10 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/register_button"
             android:layout_width="wrap_content"
-            android:background="@drawable/button_style"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
             android:text="@string/registration"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
     </LinearLayout>
 

@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,9 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
     private Button registerButton;
     private ProgressBar progressBar;
     private EditText fullNameEditText, dateEditText, emailEditText, passwordEditText;
+    private Spinner userSpinner;
+    private String userType;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,6 +55,18 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
         passwordEditText = (EditText) findViewById(R.id.password_edit_text);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        userSpinner = findViewById(R.id.user_spinner);
+        userSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                userType = userSpinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
     }
 
     @Override
@@ -112,7 +129,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()) {
-                    User user = new User(fullName, date, email);
+                    User user = new User(fullName, date, email, userType);
 
                     FirebaseDatabase.getInstance().getReference("Users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
