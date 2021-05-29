@@ -8,6 +8,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.example.schedule.Auth.User;
+import com.example.schedule.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,7 +19,7 @@ import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView fullNameTextView, emailTextView;
+    private TextView fullNameTextView, emailTextView, studentTextView;
     private DatabaseReference databaseReference;
     private User user;
     String userId;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         userId = Paper.book().read("UserId");
         emailTextView = findViewById(R.id.email_edit_text);
         fullNameTextView = findViewById(R.id.tv_name);
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
     }
