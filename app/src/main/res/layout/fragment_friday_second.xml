@@ -15,12 +15,12 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_saturday"
+            android:id="@+id/tv_friday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="@string/text_saturday"
+            android:text="@string/text_friday"
             android:textSize="32sp" />
 
         <TextView
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="20dp"
-            android:text="@string/text_first_week"
+            android:text="@string/text_second_week"
             android:textSize="14sp" />
     </LinearLayout>
 
