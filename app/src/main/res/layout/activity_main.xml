@@ -125,14 +125,6 @@
                 android:text="@string/btn_find_group"
                 android:visibility="gone" />
 
-            <Button
-                android:layout_marginTop="8dp"
-                android:id="@+id/btn_edit_group"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_edit_group"
-                android:visibility="gone"/>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_sсhedule"
                 android:layout_width="150dp"
