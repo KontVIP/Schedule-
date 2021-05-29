@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "169022916920",
+    "firebase_url": "https://schedule-nau-default-rtdb.firebaseio.com",
+    "project_id": "schedule-nau",
+    "storage_bucket": "schedule-nau.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169022916920:android:9d204524818539bf26d9cd",
+        "android_client_info": {
+          "package_name": "com.example.schedule"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169022916920-339injmd1770a35ss07n3o632esibu28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnM-klt2Aat3dSDGp0pYn4ksg0HgUDZ5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169022916920-339injmd1770a35ss07n3o632esibu28.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

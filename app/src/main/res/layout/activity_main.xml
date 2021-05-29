@@ -49,7 +49,6 @@
             android:padding="10dp"
             android:gravity="center"
             android:text="@string/email"
-            android:background="@drawable/border"
             android:layout_marginStart="160dp"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -76,7 +75,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
             android:id="@+id/tv_groupId"
             android:text="@string/groupid"
             android:layout_marginStart="180dp"
@@ -88,32 +86,51 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_weight="100dp"
-        android:layout_marginStart="250dp"
         android:layout_marginTop="30dp"
+            android:background="@drawable/button_gradient"
         android:id="@+id/btn_sсhedule"
         android:text="@string/btn_schedule"
         />
         <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
+            android:background="@drawable/button_gradient"
         android:id="@+id/btn_mark"
         android:text="@string/btn_mark" />
         <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_gradient"
+            android:id="@+id/journal"
+            android:text="@string/btn_journal"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_gradient"
+            android:id="@+id/btn_option"
+            android:text="@string/btn_option"
+            />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_gradient"
+            android:id="@+id/btn_leave"
+            android:text="@string/btn_leave"/>
 
     </LinearLayout>
 
