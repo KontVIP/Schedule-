@@ -12,7 +12,7 @@
     <string name="name_forgot_password">Відновлення облікового запису</string>
     <string name="first_nameid">nameId</string>
     <string name="tv_last_name">familyId</string>
-    <string name="tv_student">Студент(ка)</string>
+    <string name="tv_student">Студент</string>
     <string name="groupid">groupId</string>
     <string name="btn_schedule">Розклад</string>
     <string name="btn_mark">Відмітитись</string>
