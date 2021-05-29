@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Schedule</string>
+    <string name="auth">Авторизація</string>
+    <string name="schedule">Schedule</string>
+    <string name="email">Email Address</string>
+    <string name="password">Пароль</string>
+    <string name="enter">ВХІД</string>
+    <string name="forgot_password">Забули пароль?</string>
+    <string name="registration">Реєстрація</string>
 </resources>
