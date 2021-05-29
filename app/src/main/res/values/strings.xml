@@ -59,6 +59,6 @@
     <string name="number_seventh">7.</string>
     <string name="number_eight">8.</string>
     <string name="lessonId">lessonId</string>
-    <string name="text_first_week">1 тиждень</string>
-    <string name="text_second_week">2 тиждень</string>
+    <string name="text_first_week">Тиждень 1</string>
+    <string name="text_second_week">Тиждень 2</string>
 </resources>

@@ -8,6 +8,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#304ffe"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitStart"
+            android:src="@mipmap/emblem_asset_foreground" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:text="@string/text_first_week"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
         android:gravity="center"
@@ -22,14 +44,6 @@
             android:text="@string/text_sunday"
             android:textSize="32sp" />
 
-        <TextView
-            android:id="@+id/second_week"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/text_first_week"
-            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
