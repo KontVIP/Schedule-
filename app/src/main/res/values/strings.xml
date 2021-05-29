@@ -18,6 +18,7 @@
     <string name="btn_mark">Відмітитись</string>
     <string name="btn_journal">Журнал</string>
     <string name="btn_option">Налаштування</string>
+    <string name="btn_leave">Вийти з акаунту</string>
 
     <string-array name="users">
         <item>Студент</item>
