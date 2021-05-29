@@ -88,8 +88,8 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
             return;
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailEditText.setError("Введіть коректний email!");
+        if(!email.contains("@stud.nau.edu.ua")) {
+            emailEditText.setError("Введіть НАУ email!");
             emailEditText.requestFocus();
             return;
         }
