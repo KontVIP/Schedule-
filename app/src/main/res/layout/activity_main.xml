@@ -6,6 +6,28 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#304ffe"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:src="@mipmap/emblem_asset_foreground"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:text="@string/main_menu"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</LinearLayout>
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -23,7 +45,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tv_fisrtname"
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="80dp"
@@ -33,16 +55,6 @@
                 android:text="@string/first_nameid"
                 android:textSize="32sp" />
 
-            <TextView
-                android:id="@+id/last_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="sans-serif-condensed"
-                android:paddingBottom="16dp"
-                android:text="@string/tv_last_name"
-                android:textSize="32sp" />
 
         </LinearLayout>
 
