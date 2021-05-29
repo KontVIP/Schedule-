@@ -2,6 +2,7 @@ package com.example.schedule;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.schedule.Auth.User;
 import com.example.schedule.R;
+import com.example.schedule.Schedule.FragmentDaysAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,11 +29,12 @@ import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView fullNameTextView, emailTextView, studentTextView;
-    private DatabaseReference databaseReference;
+    private TextView fullNameTextView, emailTextView, studentTextView, groupNameTextView;
+    private DatabaseReference userReference;
+    private DatabaseReference groupReference;
     private User user;
     private String userId;
-    private Button leaveButton, addGroupButton;
+    private Button leaveButton, addGroupButton, findGroupButton, editGroupButton;
 
     private boolean doubleBackToExitPressedOnce = false;
 
@@ -42,13 +45,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         init();
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        userReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 user = snapshot.child(userId).getValue(User.class);
                 fullNameTextView.setText(user.fullName);
                 emailTextView.setText(user.email);
                 studentTextView.setText(user.userType);
+                if (user.groupId != "") {
+                    groupReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            groupNameTextView.setText(snapshot.child(user.groupId).child("groupName").getValue(String.class));
+                            if (user.userType.equals("Староста") ) {
+                                editGroupButton.setVisibility(View.VISIBLE);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
+                } else {
+                    groupNameTextView.setText("Без групи");
+                    if (user.userType == "Староста") {
+                        findGroupButton.setVisibility(View.VISIBLE);
+                    } else {
+                        addGroupButton.setVisibility(View.VISIBLE);
+                    }
+                }
             }
 
             @Override
@@ -61,6 +86,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         leaveButton.setOnClickListener(this);
         emailTextView.setOnClickListener(this);
         addGroupButton.setOnClickListener(this);
+
+
+
+
 
     }
 
@@ -85,14 +114,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init() {
+        editGroupButton = findViewById(R.id.btn_edit_group);
+        findGroupButton = findViewById(R.id.btn_find_group);
         studentTextView = findViewById(R.id.tv_student);
         leaveButton = findViewById(R.id.btn_leave);
         userId = Paper.book().read("UserId");
         emailTextView = findViewById(R.id.email_edit_text);
+        groupNameTextView = findViewById(R.id.tv_groupId);
         fullNameTextView = findViewById(R.id.tv_name);
         addGroupButton = findViewById(R.id.btn_add_group);
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-
+        userReference = FirebaseDatabase.getInstance().getReference("Users");
+        groupReference = FirebaseDatabase.getInstance().getReference("Groups");
     }
 
     @Override
