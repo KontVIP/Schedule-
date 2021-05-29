@@ -1,5 +1,6 @@
 package com.example.schedule.Auth;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -28,6 +29,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_forgot_password);
 
         emailEditText = (EditText) findViewById(R.id.email_edit_text);
