@@ -24,6 +24,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import io.paperdb.Paper;
+
 public class RegisterUserActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;

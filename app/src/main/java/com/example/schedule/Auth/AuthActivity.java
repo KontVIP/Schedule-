@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import com.example.schedule.MainActivity;
 import com.example.schedule.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -64,6 +65,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         String userEmailKey = Paper.book().read("Email");
         String userPasswordKey = Paper.book().read("Password");
 
+
         if(userEmailKey != "" && userPasswordKey != "") {
             if(!TextUtils.isEmpty(userEmailKey) && !TextUtils.isEmpty(userPasswordKey)) {
                 userLogin(userEmailKey, userPasswordKey);
@@ -79,7 +81,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, RegisterUserActivity.class));
                 break;
             case R.id.sign_in_button:
-                userLogin();
+                userLogin(emailEditText.getText().toString().trim(), passwordEditText.getText().toString().trim());
                 Paper.book().write("Email", emailEditText.getText().toString().trim());
                 Paper.book().write("Password", passwordEditText.getText().toString().trim());
                 break;
@@ -89,45 +91,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void userLogin() {
-        String email = emailEditText.getText().toString().trim();
-        String password = passwordEditText.getText().toString().trim();
 
-        if(email.isEmpty()) {
-            emailEditText.setError("Необхідний Email!");
-            emailEditText.requestFocus();
-            return;
-        }
-
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailEditText.setError("Введіть коректний email!");
-            emailEditText.requestFocus();
-            return;
-        }
-
-        if(password.isEmpty()) {
-            passwordEditText.setError("Необхідний пароль!");
-            passwordEditText.requestFocus();
-            return;
-        }
-
-        progressBar.setVisibility(View.VISIBLE);
-
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                if(task.isSuccessful()) {
-                    startActivity(new Intent(AuthActivity.this, MainActivity.class));
-                    Toast.makeText(AuthActivity.this, "Вхід", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(AuthActivity.this, "Невірний логінь або пароль!", Toast.LENGTH_SHORT).show();
-                }
-                progressBar.setVisibility(View.GONE);
-            }
-        });
-
-    }
 
     private void userLogin(String email, String password) {
 
@@ -162,6 +126,11 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(AuthActivity.this, "Невірний логінь або пароль!", Toast.LENGTH_SHORT).show();
                 }
                 progressBar.setVisibility(View.GONE);
+            }
+        }).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                Paper.book().write("UserId", authResult.getUser().getUid());
             }
         });
 
