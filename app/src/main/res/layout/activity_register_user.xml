@@ -33,7 +33,7 @@
             android:layout_marginTop="150dp"
             android:fontFamily="sans-serif-condensed"
             android:paddingBottom="16dp"
-            android:text="Stylish Clothes"
+            android:text="@string/app_name"
             android:textSize="32sp" />
 
         <LinearLayout
@@ -70,7 +70,7 @@
                 android:layout_height="30dp"
                 android:layout_weight=".85"
                 android:background="@drawable/custom_edit_text"
-                android:hint="Вік"
+                android:hint="@string/et_year_happy_birthday"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
 
@@ -90,7 +90,7 @@
                 android:layout_height="30dp"
                 android:layout_weight=".85"
                 android:background="@drawable/custom_edit_text"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
 
@@ -110,7 +110,7 @@
                 android:layout_height="30dp"
                 android:layout_weight=".85"
                 android:background="@drawable/custom_edit_text"
-                android:hint="Пароль"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
@@ -122,7 +122,7 @@
             android:layout_width="wrap_content"
             android:background="@drawable/button_style"
             android:layout_height="wrap_content"
-            android:text="РЕЄСТРАЦІЯ"
+            android:text="@string/registration"
             android:textColor="@color/black"/>
 
     </LinearLayout>
