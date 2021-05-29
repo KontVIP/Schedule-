@@ -14,6 +14,7 @@
         <activity android:name=".ActivitySchedule"></activity>
         <activity android:name=".FindGroup" />
         <activity android:name=".CreateGroupActivity" />
+        <activity android:name=".Schedule.ScheduleActivity"/>
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">

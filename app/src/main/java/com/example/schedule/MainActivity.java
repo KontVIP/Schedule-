@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.schedule.Auth.User;
 import com.example.schedule.R;
 import com.example.schedule.Schedule.FragmentDaysAdapter;
+import com.example.schedule.Schedule.ScheduleActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DatabaseReference groupReference;
     private User user;
     private String userId;
-    private Button leaveButton, addGroupButton, findGroupButton, editGroupButton;
+    private Button leaveButton, addGroupButton, findGroupButton, editGroupButton, scheduleButton;
 
     private boolean doubleBackToExitPressedOnce = false;
 
@@ -86,11 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         leaveButton.setOnClickListener(this);
         emailTextView.setOnClickListener(this);
         addGroupButton.setOnClickListener(this);
-
-
-
-
-
+        scheduleButton.setOnClickListener(this);
     }
 
     @Override
@@ -110,10 +107,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_add_group:
                 startActivity(new Intent(this, CreateGroupActivity.class));
                 break;
+            case R.id.btn_sсhedule:
+                startActivity(new Intent(this, ScheduleActivity.class));
+                break;
         }
     }
 
     private void init() {
+        scheduleButton = findViewById(R.id.btn_sсhedule);
         editGroupButton = findViewById(R.id.btn_edit_group);
         findGroupButton = findViewById(R.id.btn_find_group);
         studentTextView = findViewById(R.id.tv_student);
