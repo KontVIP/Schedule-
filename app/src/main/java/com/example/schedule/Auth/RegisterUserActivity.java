@@ -1,5 +1,6 @@
 package com.example.schedule.Auth;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -20,7 +21,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-
 
 public class RegisterUserActivity extends AppCompatActivity implements View.OnClickListener {
 
