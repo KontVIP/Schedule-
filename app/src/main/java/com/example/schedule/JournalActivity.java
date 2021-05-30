@@ -50,7 +50,7 @@ public class JournalActivity extends AppCompatActivity {
 
                         journalId = snapshot.child(user.groupId).child("journalId").getValue(String.class);
 
-                        journalReference.child(journalId).setValue("1", "2", "3", "4");
+                        //journalReference.child(journalId).setValue("1", "2", "3", "4");
 
                     }
 
