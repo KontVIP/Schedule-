@@ -146,14 +146,14 @@ public class FridaySecond extends Fragment implements View.OnClickListener {
         userReference = FirebaseDatabase.getInstance().getReference("Users");
         groupReference = FirebaseDatabase.getInstance().getReference("Groups");
         editImageView = rootView.findViewById(R.id.edit_image_view);
-        fridayFirstTV = rootView.findViewById(R.id.tv_friday_first_lesson_first);
-        fridaySecondTV = rootView.findViewById(R.id.tv_friday_first_lesson_second);
-        fridayThirdTV = rootView.findViewById(R.id.tv_friday_first_lesson_third);
-        fridayFourthTV = rootView.findViewById(R.id.tv_friday_first_lesson_fourth);
-        fridayFifthTV = rootView.findViewById(R.id.tv_friday_first_lesson_fifth);
-        fridaySixthTV = rootView.findViewById(R.id.tv_friday_first_lesson_sixth);
-        fridaySeventhTV = rootView.findViewById(R.id.tv_friday_first_lesson_seventh);
-        fridayEighthTV = rootView.findViewById(R.id.tv_friday_first_lesson_eighth);
+        fridayFirstTV = rootView.findViewById(R.id.lesson_first);
+        fridaySecondTV = rootView.findViewById(R.id.lesson_first);
+        fridayThirdTV = rootView.findViewById(R.id.lesson_first);
+        fridayFourthTV = rootView.findViewById(R.id.lesson_first);
+        fridayFifthTV = rootView.findViewById(R.id.lesson_first);
+        fridaySixthTV = rootView.findViewById(R.id.lesson_first);
+        fridaySeventhTV = rootView.findViewById(R.id.lesson_first);
+        fridayEighthTV = rootView.findViewById(R.id.lesson_first);
     }
 
     @Override
