@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DatabaseReference groupReference;
     private User user;
     private String userId;
-    private Button leaveButton, addGroupButton, findGroupButton, editGroupButton, scheduleButton;
+    private Button leaveButton, addGroupButton, findGroupButton, scheduleButton;
 
     private boolean doubleBackToExitPressedOnce = false;
 
@@ -58,9 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             groupNameTextView.setText(snapshot.child(user.groupId).child("groupName").getValue(String.class));
-                            if (user.userType.equals("Староста") ) {
-                                editGroupButton.setVisibility(View.VISIBLE);
-                            }
                         }
 
                         @Override
@@ -115,7 +112,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void init() {
         scheduleButton = findViewById(R.id.btn_sсhedule);
-        editGroupButton = findViewById(R.id.btn_edit_group);
         findGroupButton = findViewById(R.id.btn_find_group);
         studentTextView = findViewById(R.id.tv_student);
         leaveButton = findViewById(R.id.btn_leave);

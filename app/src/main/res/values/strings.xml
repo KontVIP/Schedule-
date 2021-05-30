@@ -61,4 +61,5 @@
     <string name="lessonId">lessonId</string>
     <string name="text_first_week">Тиждень 1</string>
     <string name="text_second_week">Тиждень 2</string>
+    <string name="editing_of_schedule">Редагування розкладу</string>
 </resources>

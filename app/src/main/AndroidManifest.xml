@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Schedule">
-        <activity android:name=".EditScheduleActivity"></activity>
+        <activity android:name=".EditSchedule.EditScheduleActivity"></activity>
         <activity android:name=".FindGroup" />
         <activity android:name=".CreateGroupActivity" />
         <activity android:name=".Schedule.ScheduleActivity" />
