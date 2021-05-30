@@ -89,7 +89,7 @@ public class MondaySecond extends Fragment implements View.OnClickListener {
         scheduleReference = FirebaseDatabase.getInstance().getReference("Schedule");
         userReference = FirebaseDatabase.getInstance().getReference("Users");
         groupReference = FirebaseDatabase.getInstance().getReference("Groups");
-
+        editImageView = rootView.findViewById(R.id.edit_image_view);
         mondayFirstTV = rootView.findViewById(R.id.tv_monday_second_lesson_first);
         mondaySecondTV = rootView.findViewById(R.id.tv_monday_second_lesson_second);
         mondayThirdTV = rootView.findViewById(R.id.tv_monday_second_lesson_third);
