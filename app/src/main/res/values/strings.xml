@@ -17,7 +17,7 @@
     <string name="btn_schedule">Розклад</string>
     <string name="btn_mark">Відмітитись</string>
     <string name="btn_journal">Журнал</string>
-    <string name="btn_option">Налаштування</string>
+    <string name="btn_option">Код групи</string>
     <string name="btn_leave">Вийти з акаунту</string>
     <string name="main_menu">Головне меню</string>
     <string name="btn_add_group">Створити групу</string>
