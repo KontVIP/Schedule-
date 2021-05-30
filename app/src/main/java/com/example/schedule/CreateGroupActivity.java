@@ -35,7 +35,8 @@ public class CreateGroupActivity extends AppCompatActivity {
     private DatabaseReference groupReference;
     private DatabaseReference userReference;
     private DatabaseReference scheduleReference;
-    private String groupId, scheduleId;
+    private DatabaseReference journalReference;
+    private String groupId, scheduleId, journalId;
     private User user;
     private EditText groupNameEditText;
     private Button createGroupButton, okButton;
@@ -64,6 +65,7 @@ public class CreateGroupActivity extends AppCompatActivity {
                         user = snapshot.child(Paper.book().read("UserId")).getValue(User.class);
                         createGroup(groupNameEditText.getText().toString().trim(), user.fullName);
                         group.scheduleId = scheduleId;
+                        group.journalId = journalId;
 
                         groupReference.child(groupId).setValue(group).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -131,8 +133,10 @@ public class CreateGroupActivity extends AppCompatActivity {
         userReference = FirebaseDatabase.getInstance().getReference("Users");
         groupReference = FirebaseDatabase.getInstance().getReference("Groups");
         scheduleReference = FirebaseDatabase.getInstance().getReference("Schedule");
+        journalReference = FirebaseDatabase.getInstance().getReference("Journal");
 
         scheduleId = scheduleReference.push().getKey();
+        journalId = journalReference.push().getKey();
         groupId = groupReference.push().getKey();
     }
 
