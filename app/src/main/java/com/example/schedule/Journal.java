@@ -18,6 +18,37 @@ public class Journal {
                    String student24, String student25, String student26, String student27, String student28, String student29,
                    String student30) {
 
+        this.student1 = student1;
+        this.student2 = student2;
+        this.student3 = student3;
+        this.student4 = student4;
+        this.student5 = student5;
+        this.student6 = student6;
+        this.student7 = student7;
+        this.student8 = student8;
+        this.student9 = student9;
+        this.student10 = student10;
+        this.student11 = student11;
+        this.student12 = student12;
+        this.student13 = student13;
+        this.student14 = student14;
+        this.student15 = student15;
+        this.student16 = student16;
+        this.student17 = student17;
+        this.student18 = student18;
+        this.student19 = student19;
+        this.student20 = student20;
+        this.student21 = student21;
+        this.student22 = student22;
+        this.student23 = student23;
+        this.student24 = student24;
+        this.student25 = student25;
+        this.student26 = student26;
+        this.student27 = student27;
+        this.student28 = student28;
+        this.student29 = student29;
+        this.student30 = student30;
+
     }
 
 }
