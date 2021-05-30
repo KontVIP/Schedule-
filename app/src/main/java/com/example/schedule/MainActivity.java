@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DatabaseReference groupReference;
     private User user;
     private String userId;
-    private Button leaveButton, addGroupButton, findGroupButton, editGroupButton, scheduleButton;
+    private Button leaveButton, addGroupButton, findGroupButton, editGroupButton, scheduleButton, markButton, journalButton;
 
     private boolean doubleBackToExitPressedOnce = false;
 
@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-
-
+        journalButton.setOnClickListener(this);
+        markButton.setOnClickListener(this);
         leaveButton.setOnClickListener(this);
         emailTextView.setOnClickListener(this);
         addGroupButton.setOnClickListener(this);
@@ -106,6 +106,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_sсhedule:
                 startActivity(new Intent(this, ScheduleActivity.class));
                 break;
+            case R.id.btn_mark:
+                startActivity(new Intent(this, MarkActivity.class));
+            case R.id.btn_journal:
+                startActivity(new Intent(this, JournalActivity.class));
         }
     }
 
@@ -120,6 +124,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         groupNameTextView = findViewById(R.id.tv_groupId);
         fullNameTextView = findViewById(R.id.tv_name);
         addGroupButton = findViewById(R.id.btn_add_group);
+        markButton = findViewById(R.id.btn_mark);
+        journalButton = findViewById(R.id.btn_journal);
         userReference = FirebaseDatabase.getInstance().getReference("Users");
         groupReference = FirebaseDatabase.getInstance().getReference("Groups");
     }
