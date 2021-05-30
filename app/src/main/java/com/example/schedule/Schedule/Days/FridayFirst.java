@@ -66,6 +66,7 @@ public class FridayFirst extends Fragment implements View.OnClickListener {
                                 fridaySixthTV.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 6").child("lessonName").getValue(String.class));
                                 fridaySeventhTV.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 7").child("lessonName").getValue(String.class));
                                 fridayEighthTV.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 8").child("lessonName").getValue(String.class));
+
                             }
 
                             @Override
