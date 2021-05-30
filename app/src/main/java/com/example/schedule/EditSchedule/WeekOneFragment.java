@@ -3,6 +3,7 @@ package com.example.schedule.EditSchedule;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -10,12 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.example.schedule.Auth.User;
 import com.example.schedule.Group;
 import com.example.schedule.R;
 import com.example.schedule.Schedule.Lesson;
 import com.example.schedule.Schedule.Schedule;
+import com.google.android.gms.tasks.SuccessContinuation;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -99,6 +103,7 @@ public class WeekOneFragment extends Fragment {
     private DatabaseReference scheduleReference;
 
     private String userId, groupId, scheduleId;
+    private ProgressBar progressBar;
 
     User user;
     Group group;
@@ -158,207 +163,207 @@ public class WeekOneFragment extends Fragment {
                                 first_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherEmail").getValue(String.class));
 
 
-                                secondLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("lessonName").getValue(String.class));
-                                second_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherName").getValue(String.class));
-                                second_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                secondLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 2").child("lessonName").getValue(String.class));
+                                second_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 2").child("teacherName").getValue(String.class));
+                                second_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 2").child("teacherEmail").getValue(String.class));
 
-                                secondLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                second_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                second_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                secondLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 2").child("lessonName").getValue(String.class));
+                                second_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 2").child("teacherName").getValue(String.class));
+                                second_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 2").child("teacherEmail").getValue(String.class));
 
-                                secondLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                second_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                second_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                secondLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 2").child("lessonName").getValue(String.class));
+                                second_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 2").child("teacherName").getValue(String.class));
+                                second_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 2").child("teacherEmail").getValue(String.class));
 
-                                secondLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("lessonName").getValue(String.class));
-                                second_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherName").getValue(String.class));
-                                second_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                secondLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 2").child("lessonName").getValue(String.class));
+                                second_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 2").child("teacherName").getValue(String.class));
+                                second_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 2").child("teacherEmail").getValue(String.class));
 
-                                secondLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("lessonName").getValue(String.class));
-                                second_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherName").getValue(String.class));
-                                second_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                secondLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 2").child("lessonName").getValue(String.class));
+                                second_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 2").child("teacherName").getValue(String.class));
+                                second_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 2").child("teacherEmail").getValue(String.class));
 
-                                secondLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("lessonName").getValue(String.class));
-                                second_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherName").getValue(String.class));
-                                second_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                secondLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 2").child("lessonName").getValue(String.class));
+                                second_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 2").child("teacherName").getValue(String.class));
+                                second_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 2").child("teacherEmail").getValue(String.class));
 
-                                secondLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("lessonName").getValue(String.class));
-                                second_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherName").getValue(String.class));
-                                second_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-
-                                thirdLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("lessonName").getValue(String.class));
-                                third_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherName").getValue(String.class));
-                                third_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                thirdLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                third_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                third_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                thirdLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                third_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                third_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                thirdLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("lessonName").getValue(String.class));
-                                third_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherName").getValue(String.class));
-                                third_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                thirdLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("lessonName").getValue(String.class));
-                                third_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherName").getValue(String.class));
-                                third_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                thirdLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("lessonName").getValue(String.class));
-                                third_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherName").getValue(String.class));
-                                third_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                thirdLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("lessonName").getValue(String.class));
-                                third_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherName").getValue(String.class));
-                                third_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                secondLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 2").child("lessonName").getValue(String.class));
+                                second_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 2").child("teacherName").getValue(String.class));
+                                second_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 2").child("teacherEmail").getValue(String.class));
 
 
-                                fourthLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fourth_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fourth_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                thirdLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 3").child("lessonName").getValue(String.class));
+                                third_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 3").child("teacherName").getValue(String.class));
+                                third_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 3").child("teacherEmail").getValue(String.class));
 
-                                fourthLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fourth_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fourth_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                thirdLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 3").child("lessonName").getValue(String.class));
+                                third_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 3").child("teacherName").getValue(String.class));
+                                third_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 3").child("teacherEmail").getValue(String.class));
 
-                                fourthLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fourth_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fourth_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                thirdLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 3").child("lessonName").getValue(String.class));
+                                third_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 3").child("teacherName").getValue(String.class));
+                                third_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 3").child("teacherEmail").getValue(String.class));
 
-                                fourthLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fourth_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fourth_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                thirdLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 3").child("lessonName").getValue(String.class));
+                                third_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 3").child("teacherName").getValue(String.class));
+                                third_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 3").child("teacherEmail").getValue(String.class));
 
-                                fourthLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fourth_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fourth_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                thirdLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 3").child("lessonName").getValue(String.class));
+                                third_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 3").child("teacherName").getValue(String.class));
+                                third_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 3").child("teacherEmail").getValue(String.class));
 
-                                fourthLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fourth_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fourth_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                thirdLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 3").child("lessonName").getValue(String.class));
+                                third_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 3").child("teacherName").getValue(String.class));
+                                third_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 3").child("teacherEmail").getValue(String.class));
 
-                                fourthLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fourth_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fourth_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-
-                                fifthLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fifth_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fifth_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                fifthLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fifth_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fifth_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                fifthLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fifth_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fifth_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                fifthLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fifth_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fifth_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                fifthLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fifth_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fifth_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                fifthLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fifth_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fifth_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                fifthLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("lessonName").getValue(String.class));
-                                fifth_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherName").getValue(String.class));
-                                fifth_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                thirdLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 3").child("lessonName").getValue(String.class));
+                                third_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 3").child("teacherName").getValue(String.class));
+                                third_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 3").child("teacherEmail").getValue(String.class));
 
 
-                                sixthLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("lessonName").getValue(String.class));
-                                sixth_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherName").getValue(String.class));
-                                sixth_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fourthLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 4").child("lessonName").getValue(String.class));
+                                fourth_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 4").child("teacherName").getValue(String.class));
+                                fourth_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 4").child("teacherEmail").getValue(String.class));
 
-                                sixthLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                sixth_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                sixth_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fourthLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 4").child("lessonName").getValue(String.class));
+                                fourth_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 4").child("teacherName").getValue(String.class));
+                                fourth_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 4").child("teacherEmail").getValue(String.class));
 
-                                sixthLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                sixth_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                sixth_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fourthLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 4").child("lessonName").getValue(String.class));
+                                fourth_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 4").child("teacherName").getValue(String.class));
+                                fourth_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 4").child("teacherEmail").getValue(String.class));
 
-                                sixthLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("lessonName").getValue(String.class));
-                                sixth_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherName").getValue(String.class));
-                                sixth_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fourthLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 4").child("lessonName").getValue(String.class));
+                                fourth_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 4").child("teacherName").getValue(String.class));
+                                fourth_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 4").child("teacherEmail").getValue(String.class));
 
-                                sixthLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("lessonName").getValue(String.class));
-                                sixth_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherName").getValue(String.class));
-                                sixth_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fourthLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 4").child("lessonName").getValue(String.class));
+                                fourth_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 4").child("teacherName").getValue(String.class));
+                                fourth_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 4").child("teacherEmail").getValue(String.class));
 
-                                sixthLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("lessonName").getValue(String.class));
-                                sixth_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherName").getValue(String.class));
-                                sixth_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fourthLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 4").child("lessonName").getValue(String.class));
+                                fourth_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 4").child("teacherName").getValue(String.class));
+                                fourth_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 4").child("teacherEmail").getValue(String.class));
 
-                                sixthLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("lessonName").getValue(String.class));
-                                sixth_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherName").getValue(String.class));
-                                sixth_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-
-                                seventhLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("lessonName").getValue(String.class));
-                                seventh_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherName").getValue(String.class));
-                                seventh_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                seventhLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                seventh_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                seventh_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                seventhLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                seventh_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                seventh_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                seventhLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("lessonName").getValue(String.class));
-                                seventh_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherName").getValue(String.class));
-                                seventh_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                seventhLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("lessonName").getValue(String.class));
-                                seventh_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherName").getValue(String.class));
-                                seventh_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                seventhLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("lessonName").getValue(String.class));
-                                seventh_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherName").getValue(String.class));
-                                seventh_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherEmail").getValue(String.class));
-
-                                seventhLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("lessonName").getValue(String.class));
-                                seventh_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherName").getValue(String.class));
-                                seventh_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fourthLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 4").child("lessonName").getValue(String.class));
+                                fourth_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 4").child("teacherName").getValue(String.class));
+                                fourth_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 4").child("teacherEmail").getValue(String.class));
 
 
-                                eighthLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("lessonName").getValue(String.class));
-                                eighth_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherName").getValue(String.class));
-                                eighth_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fifthLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 5").child("lessonName").getValue(String.class));
+                                fifth_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 5").child("teacherName").getValue(String.class));
+                                fifth_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 5").child("teacherEmail").getValue(String.class));
 
-                                eighthLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                eighth_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                eighth_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fifthLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 5").child("lessonName").getValue(String.class));
+                                fifth_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 5").child("teacherName").getValue(String.class));
+                                fifth_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 5").child("teacherEmail").getValue(String.class));
 
-                                eighthLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("lessonName").getValue(String.class));
-                                eighth_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherName").getValue(String.class));
-                                eighth_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fifthLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 5").child("lessonName").getValue(String.class));
+                                fifth_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 5").child("teacherName").getValue(String.class));
+                                fifth_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 5").child("teacherEmail").getValue(String.class));
 
-                                eighthLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("lessonName").getValue(String.class));
-                                eighth_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherName").getValue(String.class));
-                                eighth_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fifthLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 5").child("lessonName").getValue(String.class));
+                                fifth_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 5").child("teacherName").getValue(String.class));
+                                fifth_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 5").child("teacherEmail").getValue(String.class));
 
-                                eighthLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("lessonName").getValue(String.class));
-                                eighth_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherName").getValue(String.class));
-                                eighth_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fifthLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 5").child("lessonName").getValue(String.class));
+                                fifth_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 5").child("teacherName").getValue(String.class));
+                                fifth_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 5").child("teacherEmail").getValue(String.class));
 
-                                eighthLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("lessonName").getValue(String.class));
-                                eighth_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherName").getValue(String.class));
-                                eighth_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fifthLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 5").child("lessonName").getValue(String.class));
+                                fifth_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 5").child("teacherName").getValue(String.class));
+                                fifth_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 5").child("teacherEmail").getValue(String.class));
 
-                                eighthLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("lessonName").getValue(String.class));
-                                eighth_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherName").getValue(String.class));
-                                eighth_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 1").child("teacherEmail").getValue(String.class));
+                                fifthLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 5").child("lessonName").getValue(String.class));
+                                fifth_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 5").child("teacherName").getValue(String.class));
+                                fifth_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 5").child("teacherEmail").getValue(String.class));
+
+
+                                sixthLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 6").child("lessonName").getValue(String.class));
+                                sixth_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 6").child("teacherName").getValue(String.class));
+                                sixth_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 6").child("teacherEmail").getValue(String.class));
+
+                                sixthLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 6").child("lessonName").getValue(String.class));
+                                sixth_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 6").child("teacherName").getValue(String.class));
+                                sixth_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 6").child("teacherEmail").getValue(String.class));
+
+                                sixthLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 6").child("lessonName").getValue(String.class));
+                                sixth_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 6").child("teacherName").getValue(String.class));
+                                sixth_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 6").child("teacherEmail").getValue(String.class));
+
+                                sixthLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 6").child("lessonName").getValue(String.class));
+                                sixth_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 6").child("teacherName").getValue(String.class));
+                                sixth_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 6").child("teacherEmail").getValue(String.class));
+
+                                sixthLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 6").child("lessonName").getValue(String.class));
+                                sixth_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 6").child("teacherName").getValue(String.class));
+                                sixth_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 6").child("teacherEmail").getValue(String.class));
+
+                                sixthLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 6").child("lessonName").getValue(String.class));
+                                sixth_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 6").child("teacherName").getValue(String.class));
+                                sixth_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 6").child("teacherEmail").getValue(String.class));
+
+                                sixthLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 6").child("lessonName").getValue(String.class));
+                                sixth_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 6").child("teacherName").getValue(String.class));
+                                sixth_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 6").child("teacherEmail").getValue(String.class));
+
+
+                                seventhLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 7").child("lessonName").getValue(String.class));
+                                seventh_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 7").child("teacherName").getValue(String.class));
+                                seventh_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 7").child("teacherEmail").getValue(String.class));
+
+                                seventhLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 7").child("lessonName").getValue(String.class));
+                                seventh_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 7").child("teacherName").getValue(String.class));
+                                seventh_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 7").child("teacherEmail").getValue(String.class));
+
+                                seventhLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 7").child("lessonName").getValue(String.class));
+                                seventh_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 7").child("teacherName").getValue(String.class));
+                                seventh_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 7").child("teacherEmail").getValue(String.class));
+
+                                seventhLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 7").child("lessonName").getValue(String.class));
+                                seventh_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 7").child("teacherName").getValue(String.class));
+                                seventh_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 7").child("teacherEmail").getValue(String.class));
+
+                                seventhLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 7").child("lessonName").getValue(String.class));
+                                seventh_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 7").child("teacherName").getValue(String.class));
+                                seventh_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 7").child("teacherEmail").getValue(String.class));
+
+                                seventhLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 7").child("lessonName").getValue(String.class));
+                                seventh_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 7").child("teacherName").getValue(String.class));
+                                seventh_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 7").child("teacherEmail").getValue(String.class));
+
+                                seventhLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 7").child("lessonName").getValue(String.class));
+                                seventh_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 7").child("teacherName").getValue(String.class));
+                                seventh_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 7").child("teacherEmail").getValue(String.class));
+
+
+                                eighthLesson1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 8").child("lessonName").getValue(String.class));
+                                eighth_full_name_teacher_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 8").child("teacherName").getValue(String.class));
+                                eighth_teacher_email_1.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 8").child("teacherEmail").getValue(String.class));
+
+                                eighthLesson2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 8").child("lessonName").getValue(String.class));
+                                eighth_full_name_teacher_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 8").child("teacherName").getValue(String.class));
+                                eighth_teacher_email_2.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 8").child("teacherEmail").getValue(String.class));
+
+                                eighthLesson3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 8").child("lessonName").getValue(String.class));
+                                eighth_full_name_teacher_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 8").child("teacherName").getValue(String.class));
+                                eighth_teacher_email_3.setText(snapshot.child(scheduleId).child("week 1").child("wednesday").child("lesson 8").child("teacherEmail").getValue(String.class));
+
+                                eighthLesson4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 8").child("lessonName").getValue(String.class));
+                                eighth_full_name_teacher_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 8").child("teacherName").getValue(String.class));
+                                eighth_teacher_email_4.setText(snapshot.child(scheduleId).child("week 1").child("thursday").child("lesson 8").child("teacherEmail").getValue(String.class));
+
+                                eighthLesson5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 8").child("lessonName").getValue(String.class));
+                                eighth_full_name_teacher_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 8").child("teacherName").getValue(String.class));
+                                eighth_teacher_email_5.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 8").child("teacherEmail").getValue(String.class));
+
+                                eighthLesson6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 8").child("lessonName").getValue(String.class));
+                                eighth_full_name_teacher_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 8").child("teacherName").getValue(String.class));
+                                eighth_teacher_email_6.setText(snapshot.child(scheduleId).child("week 1").child("saturday").child("lesson 8").child("teacherEmail").getValue(String.class));
+
+                                eighthLesson7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 8").child("lessonName").getValue(String.class));
+                                eighth_full_name_teacher_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 8").child("teacherName").getValue(String.class));
+                                eighth_teacher_email_7.setText(snapshot.child(scheduleId).child("week 1").child("sunday").child("lesson 8").child("teacherEmail").getValue(String.class));
                             }
 
                             @Override
@@ -385,6 +390,7 @@ public class WeekOneFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 userReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -393,8 +399,6 @@ public class WeekOneFragment extends Fragment {
                         groupReference.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                                scheduleReference.child(scheduleId).setValue(schedule);
                                 scheduleReference.child(scheduleId).child("week 1").child("monday")
                                         .child("lesson 1").setValue(new Lesson(firstLesson1.getText().toString().trim(),
                                         first_full_name_teacher_1.getText().toString().trim(),
@@ -680,7 +684,15 @@ public class WeekOneFragment extends Fragment {
                                 scheduleReference.child(scheduleId).child("week 1").child("sunday")
                                         .child("lesson 8").setValue(new Lesson(eighthLesson7.getText().toString().trim(),
                                         eighth_full_name_teacher_7.getText().toString().trim(),
-                                        eighth_teacher_email_7.getText().toString().trim()));
+                                        eighth_teacher_email_7.getText().toString().trim())).onSuccessTask(new SuccessContinuation<Void, Object>() {
+                                    @NonNull
+                                    @Override
+                                    public Task<Object> then(@Nullable Void aVoid) throws Exception {
+                                        progressBar.setVisibility(View.GONE);
+                                        return null;
+                                    }
+                                });
+
                             }
 
                             @Override
@@ -705,7 +717,7 @@ public class WeekOneFragment extends Fragment {
     }
 
     private void init(View rootView) {
-
+        progressBar = rootView.findViewById(R.id.progressBar);
 
         scheduleReference = FirebaseDatabase.getInstance().getReference("Schedule");
         userReference = FirebaseDatabase.getInstance().getReference("Users");
