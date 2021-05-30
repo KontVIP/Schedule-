@@ -102,6 +102,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/lesson_field_2"
             android:background="@drawable/border"
             android:orientation="horizontal">
 
@@ -126,6 +127,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/lesson_field_3"
             android:background="@drawable/border"
             android:orientation="horizontal">
 
@@ -152,6 +154,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
+            android:id="@+id/lesson_field_4"
             android:orientation="horizontal">
 
 
@@ -176,6 +179,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
+            android:id="@+id/lesson_field_5"
             android:orientation="horizontal">
 
 
@@ -196,18 +200,12 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:orientation="horizontal">
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
+            android:id="@+id/lesson_field_6"
             android:orientation="horizontal">
 
 
@@ -233,6 +231,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
+            android:id="@+id/lesson_field_7"
             android:orientation="horizontal">
 
             <TextView
@@ -256,6 +255,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/lesson_field_8"
             android:orientation="horizontal">
 
             <TextView
