@@ -1,16 +1,18 @@
 package com.example.schedule.Schedule.Days;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.schedule.Auth.User;
+import com.example.schedule.EditSchedule.EditScheduleActivity;
 import com.example.schedule.R;
 import com.example.schedule.Schedule.Schedule;
 import com.google.firebase.database.DataSnapshot;
@@ -20,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class FridayFirst extends Fragment {
+public class FridayFirst extends Fragment implements View.OnClickListener {
 
     private TextView fridayFirstTV, fridaySecondTV, fridayThirdTV, fridayFourthTV, fridayFifthTV, fridaySixthTV, fridaySeventhTV, fridayEighthTV;
     private DatabaseReference scheduleReference;
@@ -30,6 +32,7 @@ public class FridayFirst extends Fragment {
     private String userId, scheduleId;
     private User user;
     Schedule schedule;
+    ImageView editImageView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,8 +40,8 @@ public class FridayFirst extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_friday_first, container, false);
 
         init(rootView);
+        editImageView.setOnClickListener(this);
         userId = com.example.schedule.MainActivity.userId;
-        Log.d("deb", userId + "LOLOLOUSER");
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -64,16 +67,19 @@ public class FridayFirst extends Fragment {
                                 fridaySeventhTV.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 7").child("lessonName").getValue(String.class));
                                 fridayEighthTV.setText(snapshot.child(scheduleId).child("week 1").child("friday").child("lesson 8").child("lessonName").getValue(String.class));
                             }
+
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
                             }
                         });
                     }
+
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
                     }
                 });
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
@@ -95,5 +101,14 @@ public class FridayFirst extends Fragment {
         fridaySixthTV = rootView.findViewById(R.id.tv_friday_first_lesson_sixth);
         fridaySeventhTV = rootView.findViewById(R.id.tv_friday_first_lesson_seventh);
         fridayEighthTV = rootView.findViewById(R.id.tv_friday_first_lesson_eighth);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.edit_image_view:
+                startActivity(new Intent(getActivity(), EditScheduleActivity.class));
+                break;
+        }
     }
 }
