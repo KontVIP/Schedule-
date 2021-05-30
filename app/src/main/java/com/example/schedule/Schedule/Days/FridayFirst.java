@@ -35,6 +35,7 @@ public class FridayFirst extends Fragment implements View.OnClickListener {
     private User user;
     Schedule schedule;
     ImageView editImageView;
+
     AlertDialog alert;
     View lessonField_1, lessonField_2, lessonField_3, lessonField_4, lessonField_5, lessonField_6, lessonField_7, lessonField_8;
     String name1, name2, name3, name4, name5, name6, name7, name8;
@@ -161,42 +162,42 @@ public class FridayFirst extends Fragment implements View.OnClickListener {
             case R.id.edit_image_view:
                 startActivity(new Intent(getActivity(), EditScheduleActivity.class));
                 break;
-            case R.id.lesson_field_1:
+            case R.id.ln_first:
                 builder.setMessage("8:00-9:20" + "\nІм'я викладача: " + name1 + "\nПошта викладача: " + email1);
                 alert = builder.create();
                 alert.show();
                 break;
-            case R.id.lesson_field_2:
+            case R.id.ln_second:
                 builder.setMessage("9:40-11:00" + "\nІм'я викладача: " + name2 + "\nПошта викладача: " + email2);
                 alert = builder.create();
                 alert.show();
                 break;
-            case R.id.lesson_field_3:
+            case R.id.ln_third:
                 builder.setMessage("11:20-12:40" + "\nІм'я викладача: " + name3 + "\nПошта викладача: " + email3);
                 alert = builder.create();
                 alert.show();
                 break;
-            case R.id.lesson_field_4:
+            case R.id.ln_fourth:
                 builder.setMessage("13:00-14:20" + "\nІм'я викладача: " + name4 + "\nПошта викладача: " + email4);
                 alert = builder.create();
                 alert.show();
                 break;
-            case R.id.lesson_field_5:
+            case R.id.ln_fifth:
                 builder.setMessage("14:40-16:00" + "\nІм'я викладача: " + name5 + "\nПошта викладача: " + email5);
                 alert = builder.create();
                 alert.show();
                 break;
-            case R.id.lesson_field_6:
+            case R.id.ln_sixth:
                 builder.setMessage("16:20-17:40" + "\nІм'я викладача: " + name6 + "\nПошта викладача: " + email6);
                 alert = builder.create();
                 alert.show();
                 break;
-            case R.id.lesson_field_7:
+            case R.id.ln_seventh:
                 builder.setMessage("18:00-19:20" + "\nІм'я викладача: " + name7 + "\nПошта викладача: " + email7);
                 alert = builder.create();
                 alert.show();
                 break;
-            case R.id.lesson_field_8:
+            case R.id.ln_eighth:
                 builder.setMessage("19:40-21:00" + "\nІм'я викладача: " + name8 + "\nПошта викладача: " + email8);
                 alert = builder.create();
                 alert.show();
