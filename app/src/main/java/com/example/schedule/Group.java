@@ -6,6 +6,7 @@ public class Group {
     public String groupName;
     public List students;
     public String scheduleId = "";
+    public String journalId = "";
 
     public Group() {
 
