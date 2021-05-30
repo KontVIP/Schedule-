@@ -2,9 +2,10 @@ package com.example.schedule;
 
 public class Journal {
 
-    public String lessonName = "";
-    public String teacherName = "";
-    public String teacherEmail = "";
+    public String student1, student2, student3, student4, student5, student6, student7, student8,
+    student9, student10, student11, student12, student13, student14, student15, student16, student17,
+    student18, student19, student20, student21, student22, student23, student24, student25, student26,
+    student27, student28, student29, student30;
 
     public Journal() {
 
@@ -16,9 +17,7 @@ public class Journal {
                    String student18, String student19, String student20, String student21, String student22, String student23,
                    String student24, String student25, String student26, String student27, String student28, String student29,
                    String student30) {
-        this.lessonName = lessonName;
-        this.teacherName = teacherName;
-        this.teacherEmail = teacherEmail;
+
     }
 
 }
