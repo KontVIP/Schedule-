@@ -31,7 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center|right"
-            android:paddingRight="16dp">
+            android:paddingRight="16dp"
+            >
 
             <ImageView
                 android:id="@+id/edit_image_view"
@@ -72,7 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/ln_first">
 
             <TextView
                 android:id="@+id/tv_first_number"
@@ -97,7 +99,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/ln_second">
 
             <TextView
                 android:id="@+id/tv_second_number"
@@ -120,7 +123,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/ln_third">
 
             <TextView
                 android:id="@+id/tv_third_number"
@@ -143,7 +147,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/ln_fourth">
 
             <TextView
                 android:id="@+id/tv_fourth_number"
@@ -166,7 +171,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/ln_fifth">
 
             <TextView
                 android:id="@+id/tv_fifth_number"
@@ -189,7 +195,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/ln_sixth">
 
             <TextView
                 android:id="@+id/tv_sixth_number"
@@ -212,7 +219,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/ln_seventh">
 
             <TextView
                 android:id="@+id/tv_seventh_number"
@@ -235,7 +243,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/ln_eighth">
 
             <TextView
                 android:id="@+id/tv_eight_number"
