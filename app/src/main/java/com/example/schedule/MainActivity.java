@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         userReference = FirebaseDatabase.getInstance().getReference("Users");
         groupReference = FirebaseDatabase.getInstance().getReference("Groups");
         markButton = findViewById(R.id.btn_mark);
+        journalButton = findViewById(R.id.btn_journal);
     }
 
     @Override
