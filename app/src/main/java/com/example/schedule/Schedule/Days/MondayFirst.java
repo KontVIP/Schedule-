@@ -1,5 +1,7 @@
 package com.example.schedule.Schedule.Days;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,6 +36,12 @@ public class MondayFirst extends Fragment implements View.OnClickListener {
     Schedule schedule;
     ImageView editImageView;
 
+    View lessonField_1;
+    String name1, name2, name3, name4, name5, name6, name7, name8;
+    String email1, email2, email3, email4, email5, email6, email7, email8;
+
+    AlertDialog.Builder builder;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -66,6 +74,23 @@ public class MondayFirst extends Fragment implements View.OnClickListener {
                                 mondaySixthTV.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 6").child("lessonName").getValue(String.class));
                                 mondaySeventhTV.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 7").child("lessonName").getValue(String.class));
                                 mondayEighthTV.setText(snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 8").child("lessonName").getValue(String.class));
+
+                                name1 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherName").getValue(String.class);
+                                name2 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 2").child("teacherName").getValue(String.class);
+                                name3 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 3").child("teacherName").getValue(String.class);
+                                name4 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 4").child("teacherName").getValue(String.class);
+                                name5 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 5").child("teacherName").getValue(String.class);
+                                name6 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 6").child("teacherName").getValue(String.class);
+                                name7 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 7").child("teacherName").getValue(String.class);
+                                name8 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 8").child("teacherName").getValue(String.class);
+                                email1 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 1").child("teacherEmail").getValue(String.class);
+                                email2 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 2").child("teacherEmail").getValue(String.class);
+                                email3 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 3").child("teacherEmail").getValue(String.class);
+                                email4 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 4").child("teacherEmail").getValue(String.class);
+                                email5 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 5").child("teacherEmail").getValue(String.class);
+                                email6 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 6").child("teacherEmail").getValue(String.class);
+                                email7 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 7").child("teacherEmail").getValue(String.class);
+                                email8 = snapshot.child(scheduleId).child("week 1").child("monday").child("lesson 8").child("teacherEmail").getValue(String.class);
                             }
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
@@ -81,6 +106,19 @@ public class MondayFirst extends Fragment implements View.OnClickListener {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+
+
+        builder = new AlertDialog.Builder(getContext());
+
+        builder.setCancelable(true);
+        builder.setNeutralButton("Ок", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog,
+                                int id) {
+                dialog.cancel();
+            }
+        });
+        lessonField_1 = rootView.findViewById(R.id.lesson_field_1);
+        lessonField_1.setOnClickListener(this);
 
         return rootView;
     }
@@ -105,6 +143,11 @@ public class MondayFirst extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.edit_image_view:
                 startActivity(new Intent(getActivity(), EditScheduleActivity.class));
+                break;
+            case R.id.lesson_field_1:
+                builder.setMessage("8:00-9:20" + "\nІм'я викладача: " + name1 + "\nПошта викладача: " + email1);
+                AlertDialog alert = builder.create();
+                alert.show();
                 break;
         }
     }
