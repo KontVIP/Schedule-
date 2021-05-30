@@ -73,7 +73,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@drawable/border">
+    android:background="@drawable/border"
+    android:id="@+id/ln_first">
 
 
     <TextView
@@ -102,6 +103,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@drawable/border"
+        android:id="@+id/ln_second"
         >
     <TextView
         android:layout_width="wrap_content"
@@ -126,7 +128,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/border">
+        android:background="@drawable/border"
+        android:id="@+id/ln_third">
 
 
     <TextView
@@ -151,7 +154,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/border">
+        android:background="@drawable/border"
+        android:id="@+id/ln_fourth">
 
 
     <TextView
@@ -176,7 +180,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/border">
+        android:background="@drawable/border"
+        android:id="@+id/ln_fifth">
 
 
     <TextView
@@ -201,6 +206,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@drawable/border"
+        android:id="@+id/ln_sixth"
         >
 
     </LinearLayout>
@@ -233,6 +239,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:background="@drawable/border"
+    android:id="@+id/ln_seventh"
     >
     <TextView
         android:layout_width="wrap_content"
@@ -257,6 +264,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:id="@+id/ln_eighth"
         >
     <TextView
         android:layout_width="wrap_content"
