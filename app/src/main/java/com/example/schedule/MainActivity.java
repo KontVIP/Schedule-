@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             groupNameTextView.setText(snapshot.child(user.groupId).child("groupName").getValue(String.class));
                             if (user.userType.equals("Староста") ) {
-                                editGroupButton.setVisibility(View.VISIBLE);
                             }
                         }
 
@@ -115,7 +114,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void init() {
         scheduleButton = findViewById(R.id.btn_sсhedule);
-        editGroupButton = findViewById(R.id.btn_edit_group);
         findGroupButton = findViewById(R.id.btn_find_group);
         studentTextView = findViewById(R.id.tv_student);
         leaveButton = findViewById(R.id.btn_leave);
