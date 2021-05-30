@@ -86,10 +86,6 @@ public class SaturdaySecond extends Fragment implements View.OnClickListener {
     }
 
     private void init(View rootView) {
-        scheduleReference = FirebaseDatabase.getInstance().getReference("Schedule");
-        userReference = FirebaseDatabase.getInstance().getReference("Users");
-        groupReference = FirebaseDatabase.getInstance().getReference("Groups");
-
         saturdayFirstTV = rootView.findViewById(R.id.lesson_first);
         saturdaySecondTV = rootView.findViewById(R.id.lesson_second);
         saturdayThirdTV = rootView.findViewById(R.id.lesson_third);
@@ -98,6 +94,11 @@ public class SaturdaySecond extends Fragment implements View.OnClickListener {
         saturdaySixthTV = rootView.findViewById(R.id.lesson_sixth);
         saturdaySeventhTV = rootView.findViewById(R.id.lesson_seventh);
         saturdayEighthTV = rootView.findViewById(R.id.lesson_eight);
+        editImageView = rootView.findViewById(R.id.edit_image_view);
+
+        scheduleReference = FirebaseDatabase.getInstance().getReference("Schedule");
+        userReference = FirebaseDatabase.getInstance().getReference("Users");
+        groupReference = FirebaseDatabase.getInstance().getReference("Groups");
     }
 
 

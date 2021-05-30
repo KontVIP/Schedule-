@@ -121,6 +121,7 @@ public class CreateGroupActivity extends AppCompatActivity {
     }
 
     private void init() {
+        Paper.init(this);
         codeInfoTextView = findViewById(R.id.code_info_text_view);
         groupNameTextView = findViewById(R.id.tv_text_create);
         groupCodeTextView = findViewById(R.id.tv_create_code_group);
