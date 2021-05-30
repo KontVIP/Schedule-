@@ -7,11 +7,11 @@ public class Group {
     public List students;
     public String scheduleId = "";
 
-    Group() {
+    public Group() {
 
     }
 
-    Group(String groupName, List<String> students) {
+    public Group(String groupName, List<String> students) {
         this.groupName = groupName;
         this.students = students;
     }

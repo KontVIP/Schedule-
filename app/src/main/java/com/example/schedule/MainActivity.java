@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DatabaseReference userReference;
     private DatabaseReference groupReference;
     private User user;
-    private String userId;
+    public static String userId;
     private Button leaveButton, addGroupButton, findGroupButton, scheduleButton, markButton, journalButton;
 
     private boolean doubleBackToExitPressedOnce = false;
@@ -68,10 +68,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     });
                 } else {
                     groupNameTextView.setText("Без групи");
-                    if (user.userType == "Староста") {
-                        findGroupButton.setVisibility(View.VISIBLE);
-                    } else {
+                    if (user.userType.equals("Староста")) {
+
                         addGroupButton.setVisibility(View.VISIBLE);
+                    } else {
+                        findGroupButton.setVisibility(View.VISIBLE);
                     }
                 }
             }
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init() {
+        Paper.init(this);
         scheduleButton = findViewById(R.id.btn_sсhedule);
         findGroupButton = findViewById(R.id.btn_find_group);
         studentTextView = findViewById(R.id.tv_student);

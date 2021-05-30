@@ -8,6 +8,8 @@ import android.os.Bundle;
 import com.example.schedule.R;
 import com.google.android.material.tabs.TabLayout;
 
+import io.paperdb.Paper;
+
 public class EditScheduleActivity extends AppCompatActivity {
 
     @Override
@@ -20,5 +22,6 @@ public class EditScheduleActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
     }
 }
