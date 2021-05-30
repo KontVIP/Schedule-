@@ -1,12 +1,16 @@
 package com.example.schedule;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.View;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.schedule.Auth.User;
+import com.example.schedule.Schedule.Schedule;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
