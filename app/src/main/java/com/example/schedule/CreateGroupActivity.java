@@ -69,7 +69,6 @@ public class CreateGroupActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(CreateGroupActivity.this, "Групу створено", Toast.LENGTH_SHORT).show();
                                     ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                                     ClipData clip = ClipData.newPlainText("GroupCode", groupId);
                                     clipboard.setPrimaryClip(clip);

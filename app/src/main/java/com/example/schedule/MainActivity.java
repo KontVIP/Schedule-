@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 emailTextView.setText(user.email);
                 studentTextView.setText(user.userType);
                 if (!user.groupId.equals("")) {
+                    scheduleButton.setVisibility(View.VISIBLE);
+                    markButton.setVisibility(View.VISIBLE);
+                    journalButton.setVisibility(View.VISIBLE);
                     groupReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -85,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         emailTextView.setOnClickListener(this);
         addGroupButton.setOnClickListener(this);
         scheduleButton.setOnClickListener(this);
+        findGroupButton.setOnClickListener(this);
     }
 
     @Override
@@ -109,8 +113,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_mark:
                 startActivity(new Intent(this, MarkActivity.class));
+                break;
             case R.id.btn_journal:
                 startActivity(new Intent(this, JournalActivity.class));
+                break;
+            case R.id.btn_find_group:
+                startActivity(new Intent(this, FindGroup.class));
+                break;
         }
     }
 

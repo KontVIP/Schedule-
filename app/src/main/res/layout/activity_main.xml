@@ -129,6 +129,7 @@
                 android:id="@+id/btn_sсhedule"
                 android:layout_width="150dp"
                 android:layout_height="40dp"
+                android:visibility="gone"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/button_gradient"
                 android:text="@string/btn_schedule" />
@@ -137,6 +138,7 @@
                 android:id="@+id/btn_mark"
                 android:layout_width="150dp"
                 android:layout_height="40dp"
+                android:visibility="gone"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/button_gradient"
                 android:text="@string/btn_mark" />
@@ -144,6 +146,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_journal"
                 android:layout_width="150dp"
+                android:visibility="gone"
                 android:layout_height="40dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/button_gradient"
