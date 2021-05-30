@@ -885,6 +885,28 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:paddingTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/email_edit_text"
+                        android:layout_width="250dp"
+                        android:paddingLeft="10dp"
+                        android:layout_height="30dp"
+                        android:hint="Email"
+                        android:background="@drawable/custom_edit_text"/>
+
+                    <Button
+                        android:id="@+id/email_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Відправити"/>
+
+                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

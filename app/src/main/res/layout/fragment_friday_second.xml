@@ -246,7 +246,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:orientation="horizontal"
-            android:id="@+id/ln_eight">
+            android:id="@+id/ln_eighth">
 
             <TextView
                 android:id="@+id/tv_eight_number"
@@ -256,7 +256,7 @@
                 android:text="@string/number_eight" />
 
             <TextView
-                android:id="@+id/lesson_eight"
+                android:id="@+id/lesson_eighth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
