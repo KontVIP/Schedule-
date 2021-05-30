@@ -147,13 +147,13 @@ public class FridaySecond extends Fragment implements View.OnClickListener {
         groupReference = FirebaseDatabase.getInstance().getReference("Groups");
         editImageView = rootView.findViewById(R.id.edit_image_view);
         fridayFirstTV = rootView.findViewById(R.id.lesson_first);
-        fridaySecondTV = rootView.findViewById(R.id.lesson_first);
-        fridayThirdTV = rootView.findViewById(R.id.lesson_first);
-        fridayFourthTV = rootView.findViewById(R.id.lesson_first);
-        fridayFifthTV = rootView.findViewById(R.id.lesson_first);
-        fridaySixthTV = rootView.findViewById(R.id.lesson_first);
-        fridaySeventhTV = rootView.findViewById(R.id.lesson_first);
-        fridayEighthTV = rootView.findViewById(R.id.lesson_first);
+        fridaySecondTV = rootView.findViewById(R.id.lesson_second);
+        fridayThirdTV = rootView.findViewById(R.id.lesson_third);
+        fridayFourthTV = rootView.findViewById(R.id.lesson_fourth);
+        fridayFifthTV = rootView.findViewById(R.id.lesson_fifth);
+        fridaySixthTV = rootView.findViewById(R.id.lesson_sixth);
+        fridaySeventhTV = rootView.findViewById(R.id.lesson_seventh);
+        fridayEighthTV = rootView.findViewById(R.id.lesson_eight);
     }
 
     @Override
