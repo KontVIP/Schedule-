@@ -262,13 +262,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:id="@+id/tv_eight_number"
+        android:id="@+id/tv_eighth_number"
         android:text="@string/number_eight"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_monday_first_lesson_eight"
+            android:id="@+id/tv_monday_first_lesson_eighth"
             android:layout_marginStart="80dp"
             android:textSize="16sp"
             android:text="@string/lessonId"

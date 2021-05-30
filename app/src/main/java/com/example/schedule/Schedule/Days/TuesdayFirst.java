@@ -1,65 +1,113 @@
 package com.example.schedule.Schedule.Days;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.schedule.Auth.User;
+import com.example.schedule.EditSchedule.EditScheduleActivity;
 import com.example.schedule.R;
+import com.example.schedule.Schedule.Schedule;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TuesdayFirst#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class TuesdayFirst extends Fragment {
+public class TuesdayFirst extends Fragment implements View.OnClickListener {
+    private TextView tuesdayFirstTV, tuesdaySecondTV, tuesdayThirdTV, tuesdayFourthTV, tuesdayFifthTV, tuesdaySixthTV, tuesdaySeventhTV, tuesdayEighthTV;
+    private DatabaseReference scheduleReference;
+    private DatabaseReference userReference;
+    private DatabaseReference groupReference;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private String userId, scheduleId;
+    private User user;
+    Schedule schedule;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    ImageView editImageView;
 
-    public TuesdayFirst() {
-        // Required empty public constructor
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_tuesday_first, container, false);
+
+        init(rootView);
+
+        editImageView.setOnClickListener(this);
+
+
+
+        userId = com.example.schedule.MainActivity.userId;
+        userReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                user = snapshot.child(userId).getValue(User.class);
+
+                groupReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        scheduleId = snapshot.child(user.groupId).child("scheduleId").getValue(String.class);
+                        schedule = new Schedule();
+                        schedule.scheduleId = scheduleId;
+
+                        scheduleReference.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                tuesdayFirstTV.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 1").child("lessonName").getValue(String.class));
+                                tuesdaySecondTV.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 2").child("lessonName").getValue(String.class));
+                                tuesdayThirdTV.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 3").child("lessonName").getValue(String.class));
+                                tuesdayFourthTV.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 4").child("lessonName").getValue(String.class));
+                                tuesdayFifthTV.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 5").child("lessonName").getValue(String.class));
+                                tuesdaySixthTV.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 6").child("lessonName").getValue(String.class));
+                                tuesdaySeventhTV.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 7").child("lessonName").getValue(String.class));
+                                tuesdayEighthTV.setText(snapshot.child(scheduleId).child("week 1").child("tuesday").child("lesson 8").child("lessonName").getValue(String.class));
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                            }
+                        });
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        return rootView;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TuesdayFirst.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static TuesdayFirst newInstance(String param1, String param2) {
-        TuesdayFirst fragment = new TuesdayFirst();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public void init(View rootView) {
+        editImageView = rootView.findViewById(R.id.edit_image_view);
+        scheduleReference = FirebaseDatabase.getInstance().getReference("Schedule");
+        userReference = FirebaseDatabase.getInstance().getReference("Users");
+        groupReference = FirebaseDatabase.getInstance().getReference("Groups");
+
+        tuesdayFirstTV = rootView.findViewById(R.id.lesson_first);
+        tuesdaySecondTV = rootView.findViewById(R.id.lesson_second);
+        tuesdayThirdTV = rootView.findViewById(R.id.lesson_third);
+        tuesdayFourthTV = rootView.findViewById(R.id.lesson_fourth);
+        tuesdayFifthTV = rootView.findViewById(R.id.lesson_fifth);
+        tuesdaySixthTV = rootView.findViewById(R.id.lesson_sixth);
+        tuesdaySeventhTV = rootView.findViewById(R.id.lesson_seventh);
+        tuesdayEighthTV = rootView.findViewById(R.id.lesson_eight);
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.edit_image_view:
+                startActivity(new Intent(getActivity(), EditScheduleActivity.class));
+                break;
         }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tuesday_first, container, false);
     }
 }
